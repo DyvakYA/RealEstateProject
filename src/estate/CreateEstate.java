@@ -11,4 +11,4 @@ public class CreateEstate {
          //estates.add(new Realty("TRC", "L.Tolstoy", 20, 2500) {});
          return estates; 
      } 
-}qweqwe
+}
