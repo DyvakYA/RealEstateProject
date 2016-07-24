@@ -36,7 +36,7 @@ public class House extends Realty {
     }
 
     @Override
-    public double getPrice() {
+    public int getPrice() {
         return area*3;
     }
 

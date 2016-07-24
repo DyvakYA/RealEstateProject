@@ -2,7 +2,7 @@ package estate;
 
 import java.util.Objects;
 
-public class Flat extends Realty{
+public  class Flat extends Realty{
     
     private int Floor;
     private boolean isPrimary;
@@ -36,7 +36,7 @@ public class Flat extends Realty{
     }
     
     @Override
-    public double getPrice() {
+    public int getPrice() {
         return area*2;
     }
 
