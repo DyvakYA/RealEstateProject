@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Seller <T extends Realty> {
+public abstract class Seller <T extends Realty & Estate> {
 
     protected final long id;
     protected final long adDate;
@@ -54,8 +54,8 @@ public abstract class Seller <T extends Realty> {
         return realties;
     }
 
-    public void addRealties(Realty realty) {
-        this.realties.add((T) realty);
+    public void addRealties(T realty) {
+        this.realties.add(realty);
     }
 
     @Override
