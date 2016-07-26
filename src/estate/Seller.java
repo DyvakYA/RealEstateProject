@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Seller <T extends Realty> {
+/**
+ * Created by Дмитрий on 19.07.2016.
+ */
+public class Seller<T extends Realty & Estate> {
 
-    protected final long id;
-    protected final long adDate;
+    private final long id;
+    private final long adDate;
     protected String name;
     protected String surname;
     protected String phoneNamber;
@@ -15,7 +18,7 @@ public abstract class Seller <T extends Realty> {
 
     public Seller() {
         this.id = RealtyUtils.getId();
-        this.adDate = RealtyUtils.getData();
+        this.adDate = RealtyUtils.setDate();
     }
 
     public long getId() {
@@ -54,8 +57,8 @@ public abstract class Seller <T extends Realty> {
         return realties;
     }
 
-    public void addRealties(Realty realty) {
-        this.realties.add((T) realty);
+    public void addRealties(T realty) {
+        this.realties.add(realty);
     }
 
     @Override
@@ -63,9 +66,7 @@ public abstract class Seller <T extends Realty> {
         if (this == o) return true;
         if (!(o instanceof Seller)) return false;
         Seller<?> seller = (Seller<?>) o;
-        return id == seller.id &&
-                adDate == seller.adDate &&
-                Objects.equals(name, seller.name) &&
+        return Objects.equals(name, seller.name) &&
                 Objects.equals(surname, seller.surname) &&
                 Objects.equals(phoneNamber, seller.phoneNamber) &&
                 Objects.equals(realties, seller.realties);
@@ -73,7 +74,7 @@ public abstract class Seller <T extends Realty> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, adDate, name, surname, phoneNamber, realties);
+        return Objects.hash(name, surname, phoneNamber, realties);
     }
 
     @Override
@@ -89,5 +90,3 @@ public abstract class Seller <T extends Realty> {
         return sb.toString();
     }
 }
-
-
