@@ -21,14 +21,14 @@ public class EstateRunner {
         private static void testSortByAgeAsc(List<Realty> initRealty) {
             List<Realty> realties = new ArrayList<>(initRealty);
 
-            Collections.sort(realties, RealtyComparator.PRICE);
+            Collections.sort(realties, SortUtils.PRICE);
         RealtyUtils.printList("Sorted realties list (AGE, ACS):", realties);
         }
 
         private static void testSortByNameDesc(List<Realty> initRealty) {
             List<Realty> realties = new ArrayList<>(initRealty);
 
-            Collections.sort(realties, Collections.reverseOrder(RealtyComparator.STREET));
+            Collections.sort(realties, Collections.reverseOrder(SortUtils.STREET));
            RealtyUtils.printList("Sorted realties list (NAME, DESC):", realties);
         }
 
