@@ -18,7 +18,7 @@ public class Seller<T extends Realty & Estate> {
 
     public Seller() {
         this.id = RealtyUtils.getId();
-        this.adDate = RealtyUtils.setDate();
+        this.adDate = RealtyUtils.getData();
     }
 
     public long getId() {

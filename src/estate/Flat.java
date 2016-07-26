@@ -5,8 +5,8 @@ import java.util.Objects;
 public  class Flat extends Realty{
     
     private int Floor;
-    private boolean isPrimary;
-    private int buildingFloor;
+    private boolean Primary;
+    private int buildingFloors;
    
     public Flat() {
     }
@@ -19,30 +19,30 @@ public  class Flat extends Realty{
         this.Floor = Floor;
     }
 
-    public boolean isIsPrimary() {
-        return isPrimary;
+    public boolean getPrimary() {
+        return Primary;
     }
 
-    public void setIsPrimary(boolean isPrimary) {
-        this.isPrimary = isPrimary;
+    public void setPrimary(boolean isPrimary) {
+        this.Primary = isPrimary;
     }
 
-    public int getBuildingFloor() {
-        return buildingFloor;
+    public int getBuildingFloors() {
+        return buildingFloors;
     }
 
-    public void setBuildingFloor(int buildingFloor) {
-        this.buildingFloor = buildingFloor;
+    public void setBuildingFloors(int buildingFloor) {
+        this.buildingFloors = buildingFloor;
     }
     
     @Override
     public int getPrice() {
-        return area*2;
+        return area*8000;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Floor, isPrimary, buildingFloor);
+        return Objects.hash(super.hashCode(), Floor, Primary, buildingFloors);
     }
 
     @Override
@@ -60,10 +60,10 @@ public  class Flat extends Realty{
         if (this.Floor != other.Floor) {
             return false;
         }
-        if (this.isPrimary != other.isPrimary) {
+        if (this.Primary != other.Primary) {
             return false;
         }
-        if (this.buildingFloor != other.buildingFloor) {
+        if (this.buildingFloors != other.buildingFloors) {
             return false;
         }
         return true;
@@ -84,8 +84,8 @@ public  class Flat extends Realty{
         sb.append(", isSold=").append(isSold);
         sb.append("\n ----------- \n");
         sb.append("Floor=").append(Floor);
-        sb.append(", isPrimary=").append(isPrimary);
-        sb.append(", buildingFloor=").append(buildingFloor);
+        sb.append(", isPrimary=").append(Primary);
+        sb.append(", buildingFloor=").append(buildingFloors);
         sb.append('}');
         return sb.toString();
     }
