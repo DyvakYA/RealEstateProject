@@ -1,5 +1,6 @@
 package estate;
 
+
 import java.util.Objects;
 
 public class House extends Realty {
