@@ -69,11 +69,12 @@ public class House extends Realty {
         sb.append(", description='").append(description).append('\'');
         sb.append(", seller=").append(seller);
         sb.append(", isSold=").append(isSold);
-        sb.append("\n ----------- \n");
+        sb.append("\n");
         sb.append("numberOfFloors=").append(numberOfFloors);
         sb.append(", hasGarage=").append(hasGarage);
         sb.append(", courtyardArea=").append(courtyardArea);
         sb.append('}');
+        sb.append("\n");
         return sb.toString();
     }
 }
