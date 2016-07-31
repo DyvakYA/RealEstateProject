@@ -7,14 +7,14 @@ import java.util.Objects;
 /**
  * Created by Дмитрий on 19.07.2016.
  */
-public class Seller<T extends Realty & Estate> {
+public class Seller{
 
     private final long id;
     private final long adDate;
     protected String name;
     protected String surname;
     protected String phoneNamber;
-    protected List<T> realties = new ArrayList<>();
+    protected List<Realty> realties = new ArrayList<>();
 
     public Seller() {
         this.id = RealtyUtils.getId();
@@ -53,11 +53,13 @@ public class Seller<T extends Realty & Estate> {
         this.phoneNamber = phoneNamber;
     }
 
-    public List<T> getRealties() {
+    public  List<Realty> getRealties() {
         return realties;
     }
 
-    public void addRealties(T realty) {
+
+
+    public void addRealties(Realty realty) {
         this.realties.add(realty);
     }
 
@@ -65,7 +67,7 @@ public class Seller<T extends Realty & Estate> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Seller)) return false;
-        Seller<?> seller = (Seller<?>) o;
+        Seller seller = (Seller) o;
         return Objects.equals(name, seller.name) &&
                 Objects.equals(surname, seller.surname) &&
                 Objects.equals(phoneNamber, seller.phoneNamber) &&

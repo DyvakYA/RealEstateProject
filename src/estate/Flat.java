@@ -82,11 +82,12 @@ public  class Flat extends Realty{
         sb.append(", description='").append(description).append('\'');
         sb.append(", seller=").append(seller);
         sb.append(", isSold=").append(isSold);
-        sb.append("\n ----------- \n");
+        sb.append("\n");
         sb.append("Floor=").append(Floor);
         sb.append(", isPrimary=").append(Primary);
         sb.append(", buildingFloor=").append(buildingFloors);
         sb.append('}');
+        sb.append("\n");
         return sb.toString();
     }
 }

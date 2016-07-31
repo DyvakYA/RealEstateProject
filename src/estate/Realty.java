@@ -24,7 +24,7 @@ public abstract class Realty implements Estate{
         return id;
     }
 
-    public long getAdDate() {
+    public long getData() {
         return adDate;
     }
 

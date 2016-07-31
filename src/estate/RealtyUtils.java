@@ -1,9 +1,10 @@
 package estate;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Random;
 
-final class RealtyUtils {
+public final class RealtyUtils {
 
         private RealtyUtils() {
         }
@@ -17,4 +18,15 @@ final class RealtyUtils {
             return new GregorianCalendar().getTime().getTime();
         }
 
+
+        public static void printAll(List<?> list) {
+            for (Object i : list) {
+                System.out.println(i);
+            }
+        }
+
+        public static void separator(){
+            System.out.println("-------------------------------------------------------------------");
+
+    }
 }
