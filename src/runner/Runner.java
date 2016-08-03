@@ -16,78 +16,82 @@ import static estate.RealtyUtils.separator;
 public class Runner {
     public static void main(String[] args) {
 
-        List<Seller> sellers = new ArrayList<>();
+        public static final String INPUT_TEXT_FILE = "estate/realty";
 
-        Seller s1 = new Seller();
-        s1.setName("Vasia");
-        s1.setSurname("Popov");
-        s1.setPhoneNamber("+38-(066)-666-66-66");
-        sellers.add(s1);
+        read();
 
-        Seller s2 = new Seller();
-        s2.setName("Kolia");
-        s2.setSurname("Bykov");
-        s2.setPhoneNamber("+38-(077)-777-77-77");
-        sellers.add(s2);
-
-        List<Realty> realties = new ArrayList<>();
-
-        House h1 = new House();
-        h1.setCourtyardArea(300);
-        h1.setHasGarage(true);
-        h1.setNumberOfFloors(2);
-        h1.setArea(300);
-        h1.setDescription("Fine place near the river. ");
-        h1.setDistrict("Obolon");
-        h1.setHouseNumber("10");
-        h1.setNumberOfRooms(5);
-        h1.setStreet("Shevchenko");
-        h1.setSeller(s1);
-        realties.add(h1);
-
-        House h2 = new House();
-        h2.setCourtyardArea(120);
-        h2.setHasGarage(true);
-        h2.setNumberOfFloors(3);
-        h2.setArea(400);
-        h2.setDescription("Fantastic house in the center of Kyiv. ");
-        h2.setDistrict("Podol");
-        h2.setHouseNumber("1");
-        h2.setNumberOfRooms(6);
-        h2.setStreet("Hreshchatyk");
-        h2.setSeller(s2);
-        realties.add(h2);
-
-        Flat f1 = new Flat();
-        f1.setBuildingFloors(9);
-        f1.setFloor(5);
-        f1.setPrimary(false);
-        f1.setArea(80);
-        f1.setDescription("Nice view from the window. ");
-        f1.setDistrict("Obolon");
-        f1.setHouseNumber("1");
-        f1.setNumberOfRooms(3);
-        f1.setStreet("Shevchenko");
-        f1.setSeller(s1);
-        realties.add(f1);
-
-        Flat f2 = new Flat();
-        f2.setBuildingFloors(25);
-        f2.setFloor(7);
-        f2.setPrimary(true);
-        f2.setArea(120);
-        f2.setDescription("Modern infrastructure around the building. ");
-        f2.setDistrict("Obolon");
-        f2.setHouseNumber("5");
-        f2.setNumberOfRooms(4);
-        f2.setStreet("Shevchenko");
-        f2.setSeller(s2);
-        realties.add(f2);
-
-        s1.addRealties(h1);
-        s2.addRealties(h2);
-        s1.addRealties(f1);
-        s2.addRealties(f2);
+//        List<Seller> sellers = new ArrayList<>();
+//
+//        Seller s1 = new Seller();
+//        s1.setName("Vasia");
+//        s1.setSurname("Popov");
+//        s1.setPhoneNamber("+38-(066)-666-66-66");
+//        sellers.add(s1);
+//
+//        Seller s2 = new Seller();
+//        s2.setName("Kolia");
+//        s2.setSurname("Bykov");
+//        s2.setPhoneNamber("+38-(077)-777-77-77");
+//        sellers.add(s2);
+//
+//        List<Realty> realties = new ArrayList<>();
+//
+//        House h1 = new House();
+//        h1.setCourtyardArea(300);
+//        h1.setHasGarage(true);
+//        h1.setNumberOfFloors(2);
+//        h1.setArea(300);
+//        h1.setDescription("Fine place near the river. ");
+//        h1.setDistrict("Obolon");
+//        h1.setHouseNumber("10");
+//        h1.setNumberOfRooms(5);
+//        h1.setStreet("Shevchenko");
+//        h1.setSeller(s1);
+//        realties.add(h1);
+//
+//        House h2 = new House();
+//        h2.setCourtyardArea(120);
+//        h2.setHasGarage(true);
+//        h2.setNumberOfFloors(3);
+//        h2.setArea(400);
+//        h2.setDescription("Fantastic house in the center of Kyiv. ");
+//        h2.setDistrict("Podol");
+//        h2.setHouseNumber("1");
+//        h2.setNumberOfRooms(6);
+//        h2.setStreet("Hreshchatyk");
+//        h2.setSeller(s2);
+//        realties.add(h2);
+//
+//        Flat f1 = new Flat();
+//        f1.setBuildingFloors(9);
+//        f1.setFloor(5);
+//        f1.setPrimary(false);
+//        f1.setArea(80);
+//        f1.setDescription("Nice view from the window. ");
+//        f1.setDistrict("Obolon");
+//        f1.setHouseNumber("1");
+//        f1.setNumberOfRooms(3);
+//        f1.setStreet("Shevchenko");
+//        f1.setSeller(s1);
+//        realties.add(f1);
+//
+//        Flat f2 = new Flat();
+//        f2.setBuildingFloors(25);
+//        f2.setFloor(7);
+//        f2.setPrimary(true);
+//        f2.setArea(120);
+//        f2.setDescription("Modern infrastructure around the building. ");
+//        f2.setDistrict("Obolon");
+//        f2.setHouseNumber("5");
+//        f2.setNumberOfRooms(4);
+//        f2.setStreet("Shevchenko");
+//        f2.setSeller(s2);
+//        realties.add(f2);
+//
+//        s1.addRealties(h1);
+//        s2.addRealties(h2);
+//        s1.addRealties(f1);
+//        s2.addRealties(f2);
 
         printAll(sellers);
         separator();
@@ -107,6 +111,14 @@ public class Runner {
             System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice() );
         }
 
+    }
+    private static void read() {
+        try {
+            List<Realty> realties = readRealtyFromFile(INPUT_TEXT_FILE);
+            System.out.println(realties);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
