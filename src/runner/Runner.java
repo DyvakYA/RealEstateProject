@@ -3,20 +3,20 @@ package runner;
 
 import estate.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static estate.RealtyUtils.printAll;
-import static estate.RealtyUtils.separator;
+import static estate.RealtyIOUtils.*;
 
 /**
  * Created by Дмитрий on 22.07.2016.
  */
 public class Runner {
-    public static void main(String[] args) {
+    private static final String INPUT_TEXT_FILE = "src/estate/realty" ;
 
-        public static final String INPUT_TEXT_FILE = "estate/realty";
+    public static void main(String[] args) {
 
         read();
 
@@ -93,27 +93,28 @@ public class Runner {
 //        s1.addRealties(f1);
 //        s2.addRealties(f2);
 
-        printAll(sellers);
-        separator();
-        printAll(realties);
-        separator();
-
-
-        List<Realty> filtered = FilterUtils.filterLowerPrice(s2.getRealties(), 50000000);
-
-        for(Realty i: filtered) {
-            System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice() );
-        }
-
-        Collections.sort(filtered, SortUtils.PRICE);
-
-        for(Realty i: filtered) {
-            System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice() );
-        }
+//        printAll(sellers);
+//        separator();
+//        printAll(realties);
+//        separator();
+//
+//
+//        List<Realty> filtered = FilterUtils.filterLowerPrice(s2.getRealties(), 50000000);
+//
+//        for(Realty i: filtered) {
+//            System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice() );
+//        }
+//
+//        Collections.sort(filtered, SortUtils.PRICE);
+//
+//        for(Realty i: filtered) {
+//            System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice() );
+//        }
 
     }
     private static void read() {
         try {
+
             List<Realty> realties = readRealtyFromFile(INPUT_TEXT_FILE);
             System.out.println(realties);
         } catch (IOException e) {

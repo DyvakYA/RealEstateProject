@@ -8,7 +8,7 @@ public  class Flat extends Realty{
     private boolean Primary;
     private int buildingFloors;
    
-    public Flat() {
+    public Flat(String realty, String area, String district, String street, int houseNumber, int numberOfRooms, String description) {
     }
     
     public int getFloor() {

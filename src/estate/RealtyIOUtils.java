@@ -1,7 +1,6 @@
 package estate;
 
 import java.io.*;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -50,7 +49,7 @@ public class RealtyIOUtils {
         String line;
         while ((line = reader.readLine()) != null) {
             Realty realty = parseRealty(line);
-            realties.add(Realty);
+            realties.add(realty);
         }
 
         return realties;
@@ -61,4 +60,23 @@ public class RealtyIOUtils {
         return parseRealty(line);
     }
 
-}
+    public static Realty parseRealty(String s) {
+        String[] tokens = s.split(CSV_DELIMITER);
+
+        String realty = tokens[0];
+        String area = tokens[1];
+        String district = tokens[2];
+        String street = tokens[3];
+        int houseNumber = Integer.parseInt(tokens[4]);
+        int numberOfRooms = Integer.parseInt(tokens[5]);
+        String description = tokens[6];
+
+        if (realty == "h") {
+            return new House(realty, area, district, street, houseNumber, numberOfRooms, description);
+        }else{
+            return new Flat(realty, area, district, street, houseNumber, numberOfRooms, description);
+
+
+            }
+        }
+    }

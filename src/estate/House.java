@@ -9,7 +9,7 @@ public class House extends Realty {
     private boolean hasGarage;
     private int courtyardArea;
 
-    public House() {
+    public House(String realty, String area, String district, String street, int houseNumber, int numberOfRooms, String description) {
     }
 
     public int getNumberOfFloors() {
