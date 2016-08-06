@@ -1,6 +1,5 @@
 package runner;
 
-
 import estate.*;
 
 import java.io.IOException;
@@ -20,6 +19,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
+        // Sellers
         List<Seller> sellers = new ArrayList<>();
 
         Seller s1 = new Seller();
@@ -34,6 +34,7 @@ public class Runner {
         s2.setPhoneNamber("+38-(077)-777-77-77");
         sellers.add(s2);
 
+        //Reading from file Realty objects
         List<Realty> real = null;
         try {
             real = readRealtiesFromFile(OUTPUT_TEXT_FILE);
@@ -41,21 +42,26 @@ public class Runner {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        separator();
 
 //        s1.addRealties(h1);
 //        s2.addRealties(h2);
 //        s1.addRealties(f1);
 //        s2.addRealties(f2);
 
+        //Printing all Sellers
         printAll(sellers);
         separator();
 
-        List<Realty> filtered = FilterUtils.filterLowerPrice(s2.getRealties(), 50000000);
+        //Filter realties by price less 5000
+        List<Realty> filtered = FilterUtils.filterLowerPrice(real, 5000);
 
         for (Realty i : filtered) {
             System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice());
         }
+        separator();
 
+        //Sorting realties by price
         Collections.sort(real, SortUtils.PRICE);
 
         for (Realty i : real) {

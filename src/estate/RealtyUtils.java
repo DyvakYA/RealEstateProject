@@ -26,7 +26,7 @@ public final class RealtyUtils {
         }
 
         public static void separator(){
-            System.out.println("-------------------------------------------------------------------");
+            System.out.println("-----");
 
     }
 }
