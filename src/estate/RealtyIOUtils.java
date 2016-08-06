@@ -17,27 +17,7 @@ public class RealtyIOUtils {
 
     // Input from Text File
 
-    public static Realty readRealtyFromFile(String fileName) throws IOException {
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader(fileName));
-            return  readRealty(reader);
-        } finally {
-            closeReader(reader);
-        }
-    }
-
-    public static void closeReader(BufferedReader reader) {
-        try {
-            if (reader != null) {
-                reader.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static List<Realty> readRealtiesFromFile(String fileName) throws IOException {
+       public static List<Realty> readRealtiesFromFile(String fileName) throws IOException {
         // try-with-resources (Java 7)
         try (BufferedReader reader =
                      new BufferedReader(new FileReader(fileName))) {
@@ -50,35 +30,30 @@ public class RealtyIOUtils {
 
         String line;
         while ((line = reader.readLine()) != null) {
-            Realty realty = parseRealty(line);
+            Realty realty = parseRealty(line+1);
             realties.add(realty);
         }
 
         return realties;
     }
 
-    public static Realty readRealty(BufferedReader reader) throws IOException {
-        String line = reader.readLine(); // John;25
-        return parseRealty(line);
-    }
 
-    public static Realty parseRealty(String s) {
+       public static Realty parseRealty(String s) {
         String[] tokens = s.split(CSV_DELIMITER);
 
-        String realty = tokens[0];
-        String area = tokens[1];
-        String district = tokens[2];
-        String street = tokens[3];
-        int houseNumber = Integer.parseInt(tokens[4]);
-        int numberOfRooms = Integer.parseInt(tokens[5]);
-        String description = tokens[6];
+           String h1 = tokens[0];
+           int area  = Integer.parseInt(tokens[1]);
+           String district = tokens[2];
+           String street = tokens[3];
+           String houseNumber = tokens[4];
+           int numberOfRooms = Integer.parseInt(tokens[5]);
+           String description = tokens[6];
 
-        if (realty == "h") {
-            return new House(realty, area, district, street, houseNumber, numberOfRooms, description);
+
+        if (h1 == "house") {
+            return new House(area, district, street, houseNumber, numberOfRooms,  description );
         }else{
-            return new Flat(realty, area, district, street, houseNumber, numberOfRooms, description);
-
-
-            }
+            return new Flat(area, district, street, houseNumber, numberOfRooms,  description );
         }
+       }
     }

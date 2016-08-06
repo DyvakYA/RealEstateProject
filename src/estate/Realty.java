@@ -18,11 +18,28 @@ public abstract class Realty implements Estate, Serializable {
     protected Seller seller;
     protected boolean isSold;
     
-    public Realty() {
+    public Realty(int area, String district, String street, String houseNumber, int numberOfRooms, String description, Seller seller) {
+        this.id = estate.RealtyUtils.getId();
+        this.addDate = RealtyUtils.getDate();
+        this.area = area;
+        this.district = district;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.numberOfRooms = numberOfRooms;
+        this.description = description;
+        this.seller = seller;
+    }
+
+    public Realty(int area, String district, String s, String street, int numberOfRooms, String houseNumber) {
         this.id = estate.RealtyUtils.getId();
         this.addDate = RealtyUtils.getDate();
     }
-   
+
+    public Realty(String street, String houseNumber) {
+        this.id = estate.RealtyUtils.getId();
+        this.addDate = RealtyUtils.getDate();
+    }
+
     public long getId() {
         return id;
     }
@@ -94,7 +111,23 @@ public abstract class Realty implements Estate, Serializable {
     public void setSold(boolean sold) {
         isSold = sold;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Realty{" +
+                "id=" + id +
+                ", addDate=" + addDate +
+                ", area=" + area +
+                ", district='" + district + '\'' +
+                ", street='" + street + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", numberOfRooms=" + numberOfRooms +
+                ", description='" + description + '\'' +
+                ", seller=" + seller +
+                ", isSold=" + isSold +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

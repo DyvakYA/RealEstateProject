@@ -2,15 +2,24 @@ package estate;
 
 import java.util.Objects;
 
-public  class Flat extends Realty{
-    
+public  class Flat extends Realty {
+
     private int Floor;
     private boolean Primary;
     private int buildingFloors;
-   
-    public Flat(String realty, String area, String district, String street, int houseNumber, int numberOfRooms, String description) {
+
+
+    public Flat(int area, String district, String street, String houseNumber, int numberOfRooms, String description) {
+        super(street, houseNumber);
+        this.area = area;
+        this.district = district;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.numberOfRooms = numberOfRooms;
+        this.description = description;
+
     }
-    
+
     public int getFloor() {
         return Floor;
     }
@@ -34,10 +43,10 @@ public  class Flat extends Realty{
     public void setBuildingFloors(int buildingFloor) {
         this.buildingFloors = buildingFloor;
     }
-    
+
     @Override
     public int getPrice() {
-        return area*8000;
+        return area * 8000;
     }
 
     @Override
@@ -73,7 +82,7 @@ public  class Flat extends Realty{
     public String toString() {
         final StringBuffer sb = new StringBuffer("Flat{");
         sb.append("id=").append(id);
-        sb.append(", adDate=").append(adDate);
+        sb.append(", adDate=").append(addDate);
         sb.append(", area=").append(area);
         sb.append(", district='").append(district).append('\'');
         sb.append(", street='").append(street).append('\'');
@@ -91,3 +100,4 @@ public  class Flat extends Realty{
         return sb.toString();
     }
 }
+

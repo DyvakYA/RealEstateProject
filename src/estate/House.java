@@ -1,16 +1,17 @@
 package estate;
 
-
 import java.util.Objects;
 
-public class House extends Realty {
+public class House extends Realty  {
 
     private int numberOfFloors;
     private boolean hasGarage;
     private int courtyardArea;
 
-    public House(String realty, String area, String district, String street, int houseNumber, int numberOfRooms, String description) {
+    public House(int area, String district, String street, String houseNumber, int numberOfRooms, String description) {
+        super(area, district, street, houseNumber, numberOfRooms, description);
     }
+
 
     public int getNumberOfFloors() {
         return numberOfFloors;
@@ -61,7 +62,7 @@ public class House extends Realty {
     public String toString() {
         final StringBuffer sb = new StringBuffer("House{");
         sb.append("id=").append(id);
-        sb.append(", adDate=").append(adDate);
+        sb.append(", addDate=").append(addDate);
         sb.append(", area=").append(area);
         sb.append(", district='").append(district).append('\'');
         sb.append(", street='").append(street).append('\'');

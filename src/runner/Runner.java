@@ -4,8 +4,6 @@ package runner;
 import estate.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static estate.RealtyIOUtils.*;
@@ -14,11 +12,16 @@ import static estate.RealtyIOUtils.*;
  * Created by Дмитрий on 22.07.2016.
  */
 public class Runner {
-    private static final String INPUT_TEXT_FILE = "src/estate/realty" ;
+
+    public static final String OUTPUT_TEXT_FILE = "src/estate/file.out";
 
     public static void main(String[] args) {
 
-        read();
+        deserialize();
+
+    }
+
+
 
 //        List<Seller> sellers = new ArrayList<>();
 //
@@ -36,18 +39,7 @@ public class Runner {
 //
 //        List<Realty> realties = new ArrayList<>();
 //
-//        House h1 = new House();
-//        h1.setCourtyardArea(300);
-//        h1.setHasGarage(true);
-//        h1.setNumberOfFloors(2);
-//        h1.setArea(300);
-//        h1.setDescription("Fine place near the river. ");
-//        h1.setDistrict("Obolon");
-//        h1.setHouseNumber("10");
-//        h1.setNumberOfRooms(5);
-//        h1.setStreet("Shevchenko");
-//        h1.setSeller(s1);
-//        realties.add(h1);
+//
 //
 //        House h2 = new House();
 //        h2.setCourtyardArea(120);
@@ -111,15 +103,17 @@ public class Runner {
 //            System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice() );
 //        }
 
-    }
-    private static void read() {
-        try {
+        public static void deserialize() {
+            try {
+                List<Realty> real = readRealtiesFromFile(OUTPUT_TEXT_FILE);
 
-            List<Realty> realties = readRealtyFromFile(INPUT_TEXT_FILE);
-            System.out.println(realties);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
+                System.out.println(real);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return;
+
+           }
 
 }

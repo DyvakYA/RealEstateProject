@@ -7,6 +7,7 @@ import java.util.Objects;
 /**
  * Created by Дмитрий on 19.07.2016.
  */
+
 public class Seller{
 
     private final long id;
@@ -18,7 +19,7 @@ public class Seller{
 
     public Seller() {
         this.id = RealtyUtils.getId();
-        this.adDate = RealtyUtils.getData();
+        this.adDate = RealtyUtils.getDate();
     }
 
     public long getId() {
@@ -56,8 +57,6 @@ public class Seller{
     public  List<Realty> getRealties() {
         return realties;
     }
-
-
 
     public void addRealties(Realty realty) {
         this.realties.add(realty);
