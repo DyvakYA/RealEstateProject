@@ -50,11 +50,13 @@ public class RealtyIOUtils {
            String description = tokens[6];
 
 
-        if (h1 == "house") {
+        if (h1.equals("house")) {
             return new House(area, district, street, houseNumber, numberOfRooms,  description);
-        }else{
+        }if (h1.equals("flat")){
             return new Flat(area, district, street, houseNumber, numberOfRooms,  description);
-        }
+        }else{
+            return null;
+           }
        }
 
 

@@ -9,7 +9,14 @@ public class House extends Realty  {
     private int courtyardArea;
 
     public House(int area, String district, String street, String houseNumber, int numberOfRooms, String description) {
-        super(area, district, street, houseNumber, numberOfRooms, description);
+        super(street, houseNumber);
+        this.area = area;
+        this.district = district;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.numberOfRooms = numberOfRooms;
+        this.description = description;
+
     }
 
 
