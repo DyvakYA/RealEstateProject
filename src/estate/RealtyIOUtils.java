@@ -30,7 +30,7 @@ public class RealtyIOUtils {
 
         String line;
         while ((line = reader.readLine()) != null) {
-            Realty realty = parseRealty(line+1);
+            Realty realty = parseRealty(line);
             realties.add(realty);
         }
 
@@ -51,9 +51,11 @@ public class RealtyIOUtils {
 
 
         if (h1 == "house") {
-            return new House(area, district, street, houseNumber, numberOfRooms,  description );
+            return new House(area, district, street, houseNumber, numberOfRooms,  description);
         }else{
-            return new Flat(area, district, street, houseNumber, numberOfRooms,  description );
+            return new Flat(area, district, street, houseNumber, numberOfRooms,  description);
         }
        }
+
+
     }
