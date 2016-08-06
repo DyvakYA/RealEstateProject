@@ -14,7 +14,7 @@ public final class RealtyUtils {
             return rnd.nextLong();
         }
 
-        public static long getData() {
+        public static long getDate() {
             return new GregorianCalendar().getTime().getTime();
         }
 

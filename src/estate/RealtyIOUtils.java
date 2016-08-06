@@ -1,12 +1,14 @@
 package estate;
 
 import java.io.*;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by Dyvak on 03.08.2016.
  */
+
 public class RealtyIOUtils {
 
     public static final String CSV_DELIMITER = ";";
@@ -19,7 +21,7 @@ public class RealtyIOUtils {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(fileName));
-            return readRealty(reader);
+            return  readRealty(reader);
         } finally {
             closeReader(reader);
         }
@@ -35,15 +37,15 @@ public class RealtyIOUtils {
         }
     }
 
-    public static List<Realty> readRealtysFromFile(String fileName) throws IOException {
+    public static List<Realty> readRealtiesFromFile(String fileName) throws IOException {
         // try-with-resources (Java 7)
         try (BufferedReader reader =
                      new BufferedReader(new FileReader(fileName))) {
-            return readRealtys(reader);
+            return readRealties(reader);
         }
     }
 
-    private static List<Realty> readRealtys(BufferedReader reader) throws IOException {
+    private static List<Realty> readRealties(BufferedReader reader) throws IOException {
         List<Realty> realties = new LinkedList<>();
 
         String line;

@@ -1,11 +1,14 @@
 package estate;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Realty implements Estate{
+public abstract class Realty implements Estate, Serializable {
+
+    private static final long serialVersionUID = 7386683912412979589L;
   
     protected final long id;
-    protected final long adDate;
+    protected final long addDate;
     protected int area;
     protected String district;
     protected String street;
@@ -17,15 +20,15 @@ public abstract class Realty implements Estate{
     
     public Realty() {
         this.id = estate.RealtyUtils.getId();
-        this.adDate = RealtyUtils.getData();
+        this.addDate = RealtyUtils.getDate();
     }
    
     public long getId() {
         return id;
     }
 
-    public long getData() {
-        return adDate;
+    public long getDate() {
+        return addDate;
     }
 
     public int getArea() {
@@ -98,7 +101,7 @@ public abstract class Realty implements Estate{
         if (!(o instanceof Realty)) return false;
         Realty realty = (Realty) o;
         return id == realty.id &&
-                adDate == realty.adDate &&
+                addDate == realty.addDate &&
                 area == realty.area &&
                 numberOfRooms == realty.numberOfRooms &&
                 isSold == realty.isSold &&
@@ -111,6 +114,6 @@ public abstract class Realty implements Estate{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, adDate, area, district, street, houseNumber, numberOfRooms, description, seller, isSold);
+        return Objects.hash(id, addDate, area, district, street, houseNumber, numberOfRooms, description, seller, isSold);
     }
 }
