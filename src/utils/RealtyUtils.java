@@ -23,6 +23,7 @@ public final class RealtyUtils {
             for (Object i : list) {
                 System.out.println(i);
             }
+            separator();
         }
 
         public static void separator(){

@@ -12,8 +12,6 @@ import java.util.List;
 
 public class SellersIOUtils {
 
-
-
     public static final String CSV_DELIMITER = ";";
 
     private SellersIOUtils() {}
@@ -40,19 +38,14 @@ public class SellersIOUtils {
         return sellers;
     }
 
-
     public static Seller parseSellers(String s) {
         String[] tokens = s.split(CSV_DELIMITER);
 
-
-        long id = RealtyUtils.getId();
-        long adDate = RealtyUtils.getDate();
         String name = tokens[0];
         String surname = tokens[1];
         String phoneNumber = tokens[2];
 
-
-        return new Seller(id, adDate , name, surname, phoneNumber) {
+        return new Seller(name, surname, phoneNumber) {
 
           };
         };

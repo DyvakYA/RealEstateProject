@@ -9,8 +9,8 @@ import utils.filtering.RealtyPredicates;
 import java.util.Collections;
 import java.util.List;
 
-import static utils.ReadFiles.createRealties;
-import static utils.ReadFiles.createSellers;
+import static utils.ReadIOFiles.createRealties;
+import static utils.ReadIOFiles.createSellers;
 import static utils.RealtyUtils.printAll;
 import static utils.comparison.OrderedComparator.Order.ASC;
 import static utils.comparison.OrderedComparator.Order.DESC;
@@ -28,6 +28,9 @@ public class Runner {
         List<Realty> realty = createRealties();
         List<Seller> sellers = createSellers();
 
+        printAll(sellers);
+        printAll(realty);
+
         realty = Filter.filter(realty, RealtyPredicates.byStreet("Kievskaya"));
         realty = Filter.filter(realty, RealtyPredicates.byHouseNumber(3, 25));
 
@@ -37,7 +40,6 @@ public class Runner {
                 new OrderedComparator<>(ID, DESC)
         ));
 
-        printAll(sellers);
         printAll(realty);
     }
 }

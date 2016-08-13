@@ -100,7 +100,6 @@ public  class Flat extends Realty {
         sb.append(", isPrimary=").append(Primary);
         sb.append(", buildingFloor=").append(buildingFloors);
         sb.append('}');
-        sb.append("\n");
         return sb.toString();
     }
 

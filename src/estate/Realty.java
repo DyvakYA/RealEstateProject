@@ -27,13 +27,8 @@ public abstract class Realty implements Estate, Serializable {
     public Realty(String district, int houseNumber) {
         this.id = RealtyUtils.getId();
         this.addDate = RealtyUtils.getDate();
-        this.area = area;
         this.district = district;
-        this.street = street;
         this.houseNumber = houseNumber;
-        this.numberOfRooms = numberOfRooms;
-        this.description = description;
-        this.seller = seller;
     }
 
     public Realty(int area, String district, String s, String street, int numberOfRooms, String houseNumber) {

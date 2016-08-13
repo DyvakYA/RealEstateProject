@@ -23,7 +23,6 @@ public class House extends Realty {
 
     }
 
-
     public int getNumberOfFloors() {
         return numberOfFloors;
     }
@@ -87,7 +86,6 @@ public class House extends Realty {
         sb.append(", hasGarage=").append(hasGarage);
         sb.append(", courtyardArea=").append(courtyardArea);
         sb.append('}');
-        sb.append("\n");
         return sb.toString();
     }
 }
