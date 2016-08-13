@@ -42,6 +42,11 @@ public abstract class Realty implements Estate, Serializable {
         this.addDate = RealtyUtils.getDate();
     }
 
+    public Realty(long id, long addDate, String name, String surname, String phoneNumber) {
+        this.id = id;
+        this.addDate = addDate;
+    }
+
     public long getId() {
         return id;
     }

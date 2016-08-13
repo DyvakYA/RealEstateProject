@@ -5,7 +5,6 @@ import estate.House;
 import estate.Realty;
 
 import java.io.*;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,6 +13,8 @@ import java.util.List;
  */
 
 public class RealtyIOUtils {
+
+
 
     public static final String CSV_DELIMITER = ";";
 

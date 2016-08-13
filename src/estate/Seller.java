@@ -19,7 +19,7 @@ public class Seller{
     protected String phoneNamber;
     protected List<Realty> realties = new ArrayList<>();
 
-    public Seller() {
+    public Seller(long id, long adDate, String name, String surname, String phoneNumber) {
         this.id = RealtyUtils.getId();
         this.adDate = RealtyUtils.getDate();
     }

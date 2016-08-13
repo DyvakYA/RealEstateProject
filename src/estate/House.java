@@ -2,7 +2,7 @@ package estate;
 
 import java.util.Objects;
 
-public class House extends Realty  {
+public class House extends Realty {
 
     private int numberOfFloors;
     private boolean hasGarage;
