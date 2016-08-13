@@ -13,6 +13,7 @@ import static utils.SellersIOUtils.readSellersFromFile;
 /**
  * Created by Dyvak on 13.08.2016.
  */
+
 public class ReadFiles {
 
     public static final String OUTPUT_TEXT_FILE_REALTIES = "src/files/realty.in";
@@ -47,4 +48,5 @@ public class ReadFiles {
 
         return realty;
     }
+
 }

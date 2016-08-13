@@ -18,13 +18,11 @@ import static utils.comparison.RealtyComparator.HOUSENUMBER;
 import static utils.comparison.RealtyComparator.ID;
 import static utils.comparison.RealtyComparator.STREET;
 
-
 /**
  * Created by Dyvak on 13.08.2016.
  */
+
 public class Runner {
-
-
 
     public static void main(String[] args) {
         List<Realty> realty = createRealties();

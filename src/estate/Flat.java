@@ -2,6 +2,10 @@ package estate;
 
 import java.util.Objects;
 
+/**
+ * Created by Dyvak on 13.08.2016.
+ */
+
 public  class Flat extends Realty {
 
     private int Floor;
@@ -99,5 +103,5 @@ public  class Flat extends Realty {
         sb.append("\n");
         return sb.toString();
     }
-}
 
+}

@@ -2,6 +2,10 @@ package estate;
 
 import java.util.Objects;
 
+/**
+ * Created by Dyvak on 13.08.2016.
+ */
+
 public class House extends Realty {
 
     private int numberOfFloors;

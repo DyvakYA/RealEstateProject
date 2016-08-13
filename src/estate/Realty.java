@@ -5,6 +5,10 @@ import utils.RealtyUtils;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Created by Dyvak on 13.08.2016.
+ */
+
 public abstract class Realty implements Estate, Serializable {
 
     private static final long serialVersionUID = 7386683912412979589L;

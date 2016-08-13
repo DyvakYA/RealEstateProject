@@ -14,8 +14,6 @@ import java.util.List;
 
 public class RealtyIOUtils {
 
-
-
     public static final String CSV_DELIMITER = ";";
 
     private RealtyIOUtils() {}
@@ -30,7 +28,7 @@ public class RealtyIOUtils {
         }
     }
 
-    private static List<Realty> readRealties(BufferedReader reader) throws IOException {
+       private static List<Realty> readRealties(BufferedReader reader) throws IOException {
         List<Realty> realties = new LinkedList<>();
 
         String line;
@@ -41,7 +39,6 @@ public class RealtyIOUtils {
 
         return realties;
     }
-
 
        public static Realty parseRealty(String s) {
         String[] tokens = s.split(CSV_DELIMITER);
@@ -64,5 +61,4 @@ public class RealtyIOUtils {
            }
        }
 
-
-    }
+}
