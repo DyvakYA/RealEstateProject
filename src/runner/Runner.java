@@ -7,10 +7,13 @@ import utils.filtering.Filter;
 import utils.filtering.RealtyPredicates;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static utils.RealtyIOUtils.readRealtiesFromFile;
+import static utils.RealtyUtils.separator;
 import static utils.comparison.OrderedComparator.Order.ASC;
 import static utils.comparison.OrderedComparator.Order.DESC;
 import static utils.comparison.RealtyComparator.HOUSENUMBER;
@@ -22,8 +25,11 @@ import static utils.comparison.RealtyComparator.STREET;
  * Created by Dyvak on 13.08.2016.
  */
 public class Runner {
+
+    public static final String OUTPUT_TEXT_FILE = "src/files/file.out";
+
     public static void main(String[] args) {
-        List<Realty> realty = createPersons();
+        List<Realty> realty = createRealties();
 
         realty = Filter.filter(realty, RealtyPredicates.byStreet("John"));
         realty = Filter.filter(realty, RealtyPredicates.byHouseNumber(10, 25));
@@ -37,14 +43,25 @@ public class Runner {
         printRealties(realty);
     }
 
-    private static List<Realty> createPersons() {
-        List<Realty> realty = new ArrayList<>();
+    private static List<Realty> createRealties() {
 
-        realty.add(new Realty("John", 30));
-        realty.add(new Realty("Bob", 30));
-        realty.add(new Realty("John", 15));
-        realty.add(new Realty("Alan", 20));
-        realty.add(new Realty("John", 15));
+        //Reading from file Realty objects
+        List<Realty> realty = null;
+        try {
+            realty = readRealtiesFromFile(OUTPUT_TEXT_FILE);
+            System.out.println(realty);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        separator();
+
+//        List<Realty> realty = new ArrayList<>();
+//
+//        realty.add(new Realty("John", 30));
+//        realty.add(new Realty("Bob", 30));
+//        realty.add(new Realty("John", 15));
+//        realty.add(new Realty("Alan", 20));
+//        realty.add(new Realty("John", 15));
 
         return realty;
     }
@@ -55,10 +72,8 @@ public class Runner {
         }
     }
 }
-}
 
-//    public static final String OUTPUT_TEXT_FILE = "src/files/file.out";
-//
+
 //    public static void main(String[] args) {
 //
 //        // Sellers
@@ -75,21 +90,6 @@ public class Runner {
 //        s2.setSurname("Bykov");
 //        s2.setPhoneNamber("+38-(077)-777-77-77");
 //        sellers.add(s2);
-//
-//        //Reading from file Realty objects
-//        List<Realty> real = null;
-//        try {
-//            real = readRealtiesFromFile(OUTPUT_TEXT_FILE);
-//            System.out.println(real);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        separator();
-//
-//        s1.addRealties(h1);
-//        s2.addRealties(h2);
-//        s1.addRealties(f1);
-//        s2.addRealties(f2);
 //
 //        //Printing all Sellers
 //        printAll(sellers);

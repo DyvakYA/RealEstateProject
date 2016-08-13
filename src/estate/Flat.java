@@ -9,7 +9,7 @@ public  class Flat extends Realty {
     private int buildingFloors;
 
 
-    public Flat(int area, String district, String street, String houseNumber, int numberOfRooms, String description) {
+    public Flat(int area, String district, String street, int houseNumber, int numberOfRooms, String description) {
         super(street, houseNumber);
         this.area = area;
         this.district = district;

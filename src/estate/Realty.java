@@ -20,7 +20,7 @@ public abstract class Realty implements Estate, Serializable {
     protected Seller seller;
     protected boolean isSold;
     
-    public Realty(int area, String district, String street, int houseNumber, int numberOfRooms, String description, Seller seller) {
+    public Realty(String district, int houseNumber) {
         this.id = RealtyUtils.getId();
         this.addDate = RealtyUtils.getDate();
         this.area = area;

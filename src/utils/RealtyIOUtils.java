@@ -49,7 +49,7 @@ public class RealtyIOUtils {
            int area  = Integer.parseInt(tokens[1]);
            String district = tokens[2];
            String street = tokens[3];
-           String houseNumber = tokens[4];
+           int houseNumber = Integer.parseInt(tokens[4]);
            int numberOfRooms = Integer.parseInt(tokens[5]);
            String description = tokens[6];
 

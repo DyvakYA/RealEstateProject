@@ -8,7 +8,7 @@ public class House extends Realty  {
     private boolean hasGarage;
     private int courtyardArea;
 
-    public House(int area, String district, String street, String houseNumber, int numberOfRooms, String description) {
+    public House(int area, String district, String street, int houseNumber, int numberOfRooms, String description) {
         super(street, houseNumber);
         this.area = area;
         this.district = district;
