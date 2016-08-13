@@ -1,5 +1,7 @@
 package estate;
 
+import utils.RealtyUtils;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -19,7 +21,7 @@ public abstract class Realty implements Estate, Serializable {
     protected boolean isSold;
     
     public Realty(int area, String district, String street, String houseNumber, int numberOfRooms, String description, Seller seller) {
-        this.id = estate.RealtyUtils.getId();
+        this.id = RealtyUtils.getId();
         this.addDate = RealtyUtils.getDate();
         this.area = area;
         this.district = district;
@@ -31,12 +33,12 @@ public abstract class Realty implements Estate, Serializable {
     }
 
     public Realty(int area, String district, String s, String street, int numberOfRooms, String houseNumber) {
-        this.id = estate.RealtyUtils.getId();
+        this.id = RealtyUtils.getId();
         this.addDate = RealtyUtils.getDate();
     }
 
     public Realty(String street, String houseNumber) {
-        this.id = estate.RealtyUtils.getId();
+        this.id = RealtyUtils.getId();
         this.addDate = RealtyUtils.getDate();
     }
 

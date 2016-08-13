@@ -1,4 +1,6 @@
-package estate;
+package utils;
+
+import estate.Realty;
 
 import java.util.ArrayList;
 import java.util.List;

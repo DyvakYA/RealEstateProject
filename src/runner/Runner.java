@@ -1,14 +1,16 @@
 package runner;
 
 import estate.*;
+import utils.FilterUtils;
+import utils.SortUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static estate.RealtyIOUtils.*;
-import static estate.RealtyUtils.*;
+import static utils.RealtyIOUtils.*;
+import static utils.RealtyUtils.*;
 
 /**
  * Created by Дмитрий on 22.07.2016.

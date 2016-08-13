@@ -1,4 +1,6 @@
-package estate;
+package utils;
+
+import estate.Realty;
 
 import java.util.Comparator;
 

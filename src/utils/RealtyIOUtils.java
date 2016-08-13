@@ -1,4 +1,8 @@
-package estate;
+package utils;
+
+import estate.Flat;
+import estate.House;
+import estate.Realty;
 
 import java.io.*;
 import java.util.Collections;
