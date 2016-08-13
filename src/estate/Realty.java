@@ -14,13 +14,13 @@ public abstract class Realty implements Estate, Serializable {
     protected int area;
     protected String district;
     protected String street;
-    protected String houseNumber;
+    protected int houseNumber;
     protected int numberOfRooms;
     protected String description;
     protected Seller seller;
     protected boolean isSold;
     
-    public Realty(int area, String district, String street, String houseNumber, int numberOfRooms, String description, Seller seller) {
+    public Realty(int area, String district, String street, int houseNumber, int numberOfRooms, String description, Seller seller) {
         this.id = RealtyUtils.getId();
         this.addDate = RealtyUtils.getDate();
         this.area = area;
@@ -74,11 +74,11 @@ public abstract class Realty implements Estate, Serializable {
         this.street = street;
     }
 
-    public String getHouseNumber() {
+    public int getHouseNumber() {
         return houseNumber;
     }
 
-    public void setHouseNumber(String houseNumber) {
+    public void setHouseNumber(int houseNumber) {
         this.houseNumber = houseNumber;
     }
 
