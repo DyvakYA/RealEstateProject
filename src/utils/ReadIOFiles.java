@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.List;
 
 import static utils.RealtyIOUtils.readRealtiesFromFile;
-import static utils.RealtyUtils.separator;
 import static utils.SellersIOUtils.readSellersFromFile;
 
 /**
@@ -43,4 +42,4 @@ public class ReadIOFiles {
         return realty;
     }
 
-}
+}123123

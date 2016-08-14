@@ -1,6 +1,7 @@
 package runner;
 
 import estate.*;
+import utils.SellersIOUtils;
 import utils.comparison.MultiComparator;
 import utils.comparison.OrderedComparator;
 import utils.filtering.Filter;
@@ -10,13 +11,12 @@ import java.util.Collections;
 import java.util.List;
 
 import static utils.ReadIOFiles.createRealties;
+
 import static utils.ReadIOFiles.createSellers;
 import static utils.RealtyUtils.printAll;
 import static utils.comparison.OrderedComparator.Order.ASC;
 import static utils.comparison.OrderedComparator.Order.DESC;
-import static utils.comparison.RealtyComparator.HOUSENUMBER;
-import static utils.comparison.RealtyComparator.ID;
-import static utils.comparison.RealtyComparator.STREET;
+import static utils.comparison.RealtyComparator.*;
 
 /**
  * Created by Dyvak on 13.08.2016.
@@ -37,37 +37,10 @@ public class Runner {
         Collections.sort(realty, new MultiComparator<>(
                 new OrderedComparator<>(HOUSENUMBER, DESC),
                 new OrderedComparator<>(STREET, ASC),
-                new OrderedComparator<>(ID, DESC)
+                new OrderedComparator<>(ID, DESC),
+                new OrderedComparator<>(PRICE, DESC)
         ));
 
         printAll(realty);
     }
-}
-
-//    public static void main(String[] args) {
-//
-//        // Realty
-//        List<Seller> sellers = new ArrayList<>();
-//
-//
-//
-//        //Printing all Realty
-//        printAll(sellers);
-//        separator();
-//
-//        //Filter realties by price less 5000
-//        List<Realty> filtered = FilterUtils.filterLowerPrice(real, 5000);
-//
-//        for (Realty i : filtered) {
-//            System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice());
-//        }
-//        separator();
-//
-//        //Sorting realties by price
-//        Collections.sort(real, SortUtils.PRICE);
-//
-//        for (Realty i : real) {
-//            System.out.println(i.getStreet() + " " + i.getHouseNumber() + " Price: " + i.getPrice());
-//        }
-//    }}
-
+}123123123123

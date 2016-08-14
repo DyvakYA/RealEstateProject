@@ -12,6 +12,8 @@ import java.util.List;
 
 public class SellersIOUtils {
 
+
+
     public static final String CSV_DELIMITER = ";";
 
     private SellersIOUtils() {}
