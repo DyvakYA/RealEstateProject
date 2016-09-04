@@ -1,4 +1,4 @@
-package utils;
+package utils.IOForSellers;
 
 import estate.Seller;
 

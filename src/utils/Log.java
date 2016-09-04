@@ -9,7 +9,7 @@ import java.nio.file.FileSystemException;
 public class Log {
 
     public static void log(String msg) throws FileSystemException{
-        String fileName = "src/estate/files/log_"+System.nanoTime()+".txt";
+        String fileName = "src/files/log_"+System.nanoTime()+".txt";
         try {
             OutputStream outputStream = new FileOutputStream(fileName);
             Writer writer = new OutputStreamWriter(outputStream);

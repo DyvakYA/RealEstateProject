@@ -34,6 +34,6 @@ public enum RealtyComparator implements Comparator<Realty> {
             return  Integer.compare(a.getPrice(), b.getPrice()) != 0 ?
                     Integer.compare(a.getPrice(), b.getPrice()) :
                     STREET.compare(a, b);
-        };
+        }
 }
 }

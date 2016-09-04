@@ -1,4 +1,4 @@
-package utils;
+package utils.IOForRealties;
 
 import estate.Flat;
 import estate.House;

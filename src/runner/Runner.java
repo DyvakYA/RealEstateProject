@@ -1,7 +1,8 @@
 package runner;
 
 import estate.*;
-import utils.SellersIOUtils;
+import utils.ReadFromFileAdapter;
+import utils.ReadFromFileInterface;
 import utils.comparison.MultiComparator;
 import utils.comparison.OrderedComparator;
 import utils.filtering.Filter;
@@ -10,9 +11,6 @@ import utils.filtering.RealtyPredicates;
 import java.util.Collections;
 import java.util.List;
 
-import static utils.ReadIOFiles.createRealties;
-
-import static utils.ReadIOFiles.createSellers;
 import static utils.RealtyUtils.printAll;
 import static utils.comparison.OrderedComparator.Order.ASC;
 import static utils.comparison.OrderedComparator.Order.DESC;
@@ -25,8 +23,10 @@ import static utils.comparison.RealtyComparator.*;
 public class Runner {
 
     public static void main(String[] args) {
-        List<Realty> realty = createRealties();
-        List<Seller> sellers = createSellers();
+
+        ReadFromFileInterface g1 = new ReadFromFileAdapter();
+        List<Realty> realty = g1.createRealtiesAndLog();
+        List<Seller> sellers = g1.createSellersAndLog();
 
         printAll(sellers);
         printAll(realty);
@@ -43,4 +43,4 @@ public class Runner {
 
         printAll(realty);
     }
-}123123123123
+}
