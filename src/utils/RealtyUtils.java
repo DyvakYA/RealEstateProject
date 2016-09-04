@@ -18,7 +18,6 @@ public final class RealtyUtils {
             return new GregorianCalendar().getTime().getTime();
         }
 
-
         public static void printAll(List<?> list) {
             for (Object i : list) {
                 System.out.println(i);

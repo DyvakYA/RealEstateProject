@@ -1,22 +1,29 @@
 package utils;
 
 import java.io.*;
-import java.nio.file.FileSystemException;
+import java.util.Date;
 
 /**
  * Created by Dyvak on 13.08.2016.
  */
 public class Log {
 
-    public static void log(String msg) throws FileSystemException{
-        String fileName = "src/files/log_"+System.nanoTime()+".txt";
-        try {
-            OutputStream outputStream = new FileOutputStream(fileName);
-            Writer writer = new OutputStreamWriter(outputStream);
-            writer.write(msg);
-        }catch (IOException e) {
-            new File(fileName).delete();
-            throw new FileSystemException("Some error during Log massage");
+    public static void log(String msg) {
+
+        final String FILE_NAME = "src/files/log.txt";
+
+        try (FileWriter printWriter = new FileWriter(FILE_NAME, true)) {
+            doTask(printWriter);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
+    private static void doTask(FileWriter writer) throws IOException {
+        writer.write("Download from database: " + new Date() + "--------------->"+"\n");
+        writer.close();
+    }
 }
+
