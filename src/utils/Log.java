@@ -13,7 +13,7 @@ public class Log {
         final String FILE_NAME = "src/files/log.txt";
 
         try (FileWriter printWriter = new FileWriter(FILE_NAME, true)) {
-            doTask(printWriter);
+            doTask(printWriter, msg);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -21,8 +21,8 @@ public class Log {
         }
     }
 
-    private static void doTask(FileWriter writer) throws IOException {
-        writer.write("Download from database: " + new Date() + "--------------->"+"\n");
+    private static void doTask(FileWriter writer, String msg) throws IOException {
+        writer.write("Download from database: " + new Date() + "--------------->"+ msg + "\n");
         writer.close();
     }
 }

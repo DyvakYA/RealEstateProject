@@ -10,13 +10,13 @@ import java.util.List;
  */
 public class ReadFromFileAdapter extends ReadFromFile implements ReadFromFileInterface{
         public List<Seller> createSellersAndLog(){
-            Log.log("Seller");
+            Log.log("Sellers");
             createSellers();
             return super.createSellers();
         }
 
         public List<Realty> createRealtiesAndLog(){
-            Log.log("Realties");
+            Log.log("Realities");
             createRealties();
             return super.createRealties();
         }
